@@ -1,7 +1,7 @@
 import base from './rollup.base.config';
 
 const config = Object.assign({
-	format: 'es6',
+	format: 'es',
 	dest: 'dist/get.es6.js'
 }, base);
 
