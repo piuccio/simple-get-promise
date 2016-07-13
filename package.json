@@ -1,0 +1,30 @@
+{
+  "name": "simple-get-promise",
+  "description": "Simple modern way to make http requests. Supports HTTPS, ES6, JSON and Promises",
+  "repository": "https://github.com/guardian/simple-get-promise",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "main": "dist/get.cjs.js",
+  "jsnext:main": "dist/get.es6.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "eslint src test",
+    "build": "rollup -c rollup.config.cjs.js && rollup -c rollup.config.es6.js",
+    "pretest": "rollup -c rollup.config.test.js",
+    "test": "tap tmp/test-bundle.js",
+    "prepublish": "npm test && npm run build",
+    "watch": "nodemon --watch src --watch test --exec \"npm test\""
+  },
+  "devDependencies": {
+    "eslint": "^3.0.1",
+    "rollup": "^0.34.1",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-multi-entry": "^2.0.0",
+    "tap": "^6.1.1"
+  },
+  "engines": {
+    "node": ">= 4.3"
+  }
+}
