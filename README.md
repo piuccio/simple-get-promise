@@ -37,6 +37,19 @@ post({
 });
 ```
 
+Because `delete` is a reserved keyword, you can either use `del` or
+
+```js
+import { get, del } from 'simple-get-promise';
+
+del('http://example.com');
+// or
+get({
+	url: 'http://example.com',
+	method: 'delete'
+});
+```
+
 ### Advanced requests
 
 ```js
