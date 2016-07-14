@@ -72,7 +72,18 @@ get({
 });
 ```
 
-#### JSON
+#### Basic Authentication
+
+```js
+import { get } from 'simple-get-promise';
+
+get({
+	url: 'http://example.com',
+	auth: 'user:password'
+})
+```
+
+### JSON
 
 Extract the message and signature from the cookie.
 
