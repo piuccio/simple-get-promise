@@ -22,10 +22,11 @@ export function del (path, module) {
 }
 
 function normalize (path, defaultMethod) {
-	const request = typeof path === 'string' ? url.parse(path) : path;
+	let request = typeof path === 'string' ? url.parse(path) : path;
 	if (request.url) {
-		Object.assign(request, url.parse(request.url));
+		const originalUrl = request.url;
 		delete request.url;
+		request = Object.assign(url.parse(originalUrl), request);
 	}
 	request.method = (request.method || defaultMethod).toUpperCase();
 	return request;
