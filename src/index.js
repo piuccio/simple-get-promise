@@ -66,7 +66,7 @@ function request (obj, module = moduleFromProtocol(obj.protocol)) {
 }
 
 function moduleFromProtocol (protocol) {
-	return protocol === 'https' ? https : http;
+	return protocol === 'https:' ? https : http;
 }
 
 export function asJson (response) {

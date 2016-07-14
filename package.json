@@ -2,7 +2,7 @@
   "name": "simple-get-promise",
   "description": "Simple modern way to make http requests. Supports HTTPS, ES6, JSON and Promises",
   "repository": "https://github.com/guardian/simple-get-promise",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "license": "Apache-2.0",
   "main": "dist/get.cjs.js",
   "jsnext:main": "dist/get.es6.js",
