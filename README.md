@@ -88,7 +88,7 @@ get({
 Extract the message and signature from the cookie.
 
 ```js
-import { get, toJson } from 'simple-get-promise';
+import { get, asJson } from 'simple-get-promise';
 
 get('http://example.com')
 .then(asJson)
