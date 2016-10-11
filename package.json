@@ -1,7 +1,10 @@
 {
   "name": "simple-get-promise",
   "description": "Simple modern way to make http requests. Supports HTTPS, ES6, JSON and Promises",
-  "repository": "https://github.com/guardian/simple-get-promise",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/piuccio/simple-get-promise.git"
+  },
   "version": "1.0.2",
   "license": "Apache-2.0",
   "main": "dist/get.cjs.js",
@@ -27,5 +30,19 @@
   },
   "engines": {
     "node": ">= 4.3"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/piuccio/simple-get-promise/issues"
+  },
+  "homepage": "https://github.com/piuccio/simple-get-promise#readme",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": [
+    "get",
+    "http",
+    "https",
+    "request"
+  ],
+  "author": "Fabio Crisci <piuccio@gmail.com>"
 }
