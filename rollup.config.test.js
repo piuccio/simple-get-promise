@@ -1,10 +1,11 @@
-import babel from 'rollup-plugin-babel';
 import multiEntry from 'rollup-plugin-multi-entry';
 
 export default {
-	entry: 'test/**/*.test.js',
-	plugins: [babel(), multiEntry()],
-	format: 'cjs',
-	dest: 'tmp/test-bundle.js',
-	sourceMap: true
+	input: 'test/**/*.test.js',
+	plugins: [multiEntry()],
+	output: [{
+		file: 'tmp/test-bundle.js',
+		format: 'cjs',
+		sourceMap: true,
+	}],
 };

@@ -45,7 +45,7 @@ tap.test('Fails if the response is not 200', test => {
 });
 
 tap.test('Returns response and response text correctly', test => {
-	test.plan(2);
+	test.plan(3);
 
 	const mock = {
 		request (request, cb) {
@@ -61,5 +61,6 @@ tap.test('Returns response and response text correctly', test => {
 	.then(res => {
 		test.equal(res.statusCode, 200);
 		test.equal(res.responseText, 'my response');
+		test.equal(res.buffer.toString(), 'my response');
 	});
 });
