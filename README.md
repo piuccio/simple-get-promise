@@ -83,6 +83,33 @@ get({
 })
 ```
 
+#### Character encoding
+
+By default responses are handled as UTF-8, if you're dealing with other types of encodings you can specify the value in the request object
+
+```js
+import { get } from 'simple-get-promise';
+
+get({
+	url: 'http://example.com',
+	encoding: 'latin1',
+});
+```
+
+Node.js supports only a [handful of encodings](https://github.com/nodejs/node/blob/master/lib/buffer.js), if the one you needed is not available you can set `encoding: false` and handle the response directly as binary.
+
+```js
+import { get } from 'simple-get-promise';
+import iconv from 'iconv-lite';
+
+const { buffer } = await get({
+	url: 'http://example.com',
+	encoding: false,
+});
+console.log(iconv.decode(buffer, 'Shift_JIS'));
+```
+
+
 ### JSON
 
 Extract the message and signature from the cookie.

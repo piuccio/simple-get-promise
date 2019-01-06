@@ -14,22 +14,20 @@
   ],
   "scripts": {
     "prebuild": "eslint src test",
-    "build": "rollup -c rollup.config.cjs.js && rollup -c rollup.config.es6.js",
+    "build": "rollup -c rollup.config.js",
     "pretest": "rollup -c rollup.config.test.js",
     "test": "tap tmp/test-bundle.js",
     "prepublish": "npm test && npm run build",
     "watch": "nodemon --watch src --watch test --exec \"npm test\""
   },
   "devDependencies": {
-    "babel-plugin-transform-es2015-parameters": "^6.11.3",
-    "eslint": "^3.0.1",
-    "rollup": "^0.34.1",
-    "rollup-plugin-babel": "^2.6.1",
-    "rollup-plugin-multi-entry": "^2.0.0",
-    "tap": "^6.1.1"
+    "eslint": "^5.12.0",
+    "rollup": "^1.0.2",
+    "rollup-plugin-multi-entry": "^2.1.0",
+    "tap": "^12.1.1"
   },
   "engines": {
-    "node": ">= 4.3"
+    "node": ">= 6"
   },
   "bugs": {
     "url": "https://github.com/piuccio/simple-get-promise/issues"

@@ -38,19 +38,22 @@ function request (obj, module = moduleFromProtocol(obj.protocol)) {
 		delete obj.body;
 
 		const req = module.request(obj, res => {
-			res.setEncoding('utf8');
-			const data = [];
+			if (obj.encoding !== false) {
+				res.setEncoding(obj.encoding || 'utf8');
+			}
+			const chunks = [];
 
 			res.on('error', msg => {
 				const error = new Error('Invalid request');
 				error.responseText = msg;
 				reject(error);
 			});
-			res.on('data', chunk => data.push(chunk));
+			res.on('data', chunk => chunks.push(chunk));
 			res.on('end', () => {
-				const responseText = data.join('');
+				const buffer = Buffer.concat(chunks);
+				const responseText = buffer.toString();
 				if (res.statusCode === 200) {
-					resolve(Object.assign({responseText}, res));
+					resolve(Object.assign({responseText, buffer}, res));
 				} else {
 					const error = new Error('Response error');
 					error.responseText = responseText;
