@@ -3,7 +3,7 @@
   "description": "Simple modern way to make http requests. Supports HTTPS, ES6, JSON and Promises",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/piuccio/simple-get-promise.git"
+    "url": "git@github.com:piuccio/simple-get-promise.git"
   },
   "version": "2.0.0",
   "license": "Apache-2.0",
@@ -21,13 +21,13 @@
     "watch": "nodemon --watch src --watch test --exec \"npm test\""
   },
   "devDependencies": {
-    "eslint": "^5.12.0",
-    "rollup": "^1.0.2",
+    "eslint": "^5.15.3",
+    "rollup": "^1.7.0",
     "rollup-plugin-multi-entry": "^2.1.0",
-    "tap": "^12.1.1"
+    "tap": "^12.6.1"
   },
   "engines": {
-    "node": ">= 6"
+    "node": ">= 8"
   },
   "bugs": {
     "url": "https://github.com/piuccio/simple-get-promise/issues"
