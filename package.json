@@ -21,10 +21,10 @@
     "watch": "nodemon --watch src --watch test --exec \"npm test\""
   },
   "devDependencies": {
-    "eslint": "^5.15.3",
-    "rollup": "^1.7.0",
+    "eslint": "^5.16.0",
+    "rollup": "^1.12.4",
     "rollup-plugin-multi-entry": "^2.1.0",
-    "tap": "^12.6.1"
+    "tap": "^14.2.0"
   },
   "engines": {
     "node": ">= 8"

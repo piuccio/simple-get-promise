@@ -48,7 +48,7 @@ function request (obj, module = moduleFromProtocol(obj.protocol)) {
 				error.responseText = msg;
 				reject(error);
 			});
-			res.on('data', chunk => chunks.push(chunk));
+			res.on('data', chunk => chunks.push(Buffer.from(chunk)));
 			res.on('end', () => {
 				const buffer = Buffer.concat(chunks);
 				const responseText = buffer.toString();
