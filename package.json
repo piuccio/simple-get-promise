@@ -13,18 +13,17 @@
     "dist"
   ],
   "scripts": {
-    "prebuild": "eslint src test",
+    "prebuild": "npx eslint src test",
     "build": "rollup -c rollup.config.js",
     "pretest": "rollup -c rollup.config.test.js",
     "test": "tap tmp/test-bundle.js",
-    "prepublish": "npm test && npm run build",
+    "prepare": "npm test && npm run build",
     "watch": "nodemon --watch src --watch test --exec \"npm test\""
   },
   "devDependencies": {
-    "eslint": "^6.8.0",
-    "rollup": "^2.3.1",
+    "rollup": "^2.23.0",
     "rollup-plugin-multi-entry": "^2.1.0",
-    "tap": "^14.10.7"
+    "tap": "^14.10.8"
   },
   "engines": {
     "node": ">= 10"
@@ -42,5 +41,6 @@
     "https",
     "request"
   ],
-  "author": "Fabio Crisci <piuccio@gmail.com>"
+  "author": "Fabio Crisci <piuccio@gmail.com>",
+  "dependencies": {}
 }
