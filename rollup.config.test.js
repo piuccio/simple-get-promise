@@ -6,6 +6,7 @@ export default {
 	output: [{
 		file: 'tmp/test-bundle.js',
 		format: 'cjs',
-		sourceMap: true,
+		sourcemap: true,
 	}],
+	external: ['tap', 'http', 'https', 'events', 'url'],
 };
