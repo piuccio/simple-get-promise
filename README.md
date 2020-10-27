@@ -1,5 +1,15 @@
 Simple modern way to make http requests. Supports HTTPS, ES6, JSON and Promises.
 
+### Loading
+
+```js
+// CommonJS
+const { get } = require('simple-get-promise');
+
+// ES Module
+import { get } from 'simple-get-promise';
+```
+
 ### Simple GET
 
 ```js
