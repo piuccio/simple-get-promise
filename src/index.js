@@ -52,7 +52,7 @@ function request (obj, module = moduleFromProtocol(obj.protocol)) {
 			res.on('end', () => {
 				const buffer = Buffer.concat(chunks);
 				const responseText = buffer.toString();
-				if (res.statusCode === 200) {
+				if (res.statusCode >= 200 && res.statusCode <= 299) {
 					resolve(Object.assign({responseText, buffer}, res));
 				} else {
 					const error = new Error('Response error');
