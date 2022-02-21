@@ -56,6 +56,7 @@ function request (obj, module = moduleFromProtocol(obj.protocol)) {
 					resolve(Object.assign({responseText, buffer}, res));
 				} else {
 					const error = new Error('Response error');
+					error.responseCode = res.statusCode;
 					error.responseText = responseText;
 					reject(error);
 				}
